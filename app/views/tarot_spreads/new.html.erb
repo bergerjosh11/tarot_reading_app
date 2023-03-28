@@ -1,0 +1,17 @@
+<h1>Tarot Card Spread Generator</h1>
+
+<%= form_tag tarot_spreads_path, method: :post do %>
+  <label for="num_of_cards">Number of cards:</label>
+  <%= number_field_tag :num_of_cards, nil, min: 1, max: 3 %>
+
+  <%= submit_tag "Generate Spread" %>
+<% end %>
+
+<% if @selected_cards.present? %>
+  <h2>Your Tarot Card Spread:</h2>
+  <ul>
+    <% @selected_cards.each do |card| %>
+      <li><strong><%= card[:name] %>:</strong> <%= card[:description] %></li>
+    <% end %>
+  </ul>
+<% end %>

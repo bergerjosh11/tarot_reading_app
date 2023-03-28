@@ -1,0 +1,6 @@
+<h1>Your Tarot Card Spread:</h1>
+<ul>
+  <% @selected_cards.each do |card| %>
+    <li><%= card[:name] %>: <%= card[:description] %></li>
+  <% end %>
+</ul>
